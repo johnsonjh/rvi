@@ -37,7 +37,7 @@ rvi	:
 	$(CC) $(CFLAGS) -o rvi $(SOURCES) $(LIBS)
 
 clean: 
-	/bin/rm -f core *.o rvi
+	/bin/rm -f a.out core *.o rvi
  
 distclean: clean
 	/bin/rm -f config.h config.status config.cache config.log Makefile configure.in config.h.in 

@@ -88,7 +88,7 @@ int main(int argc, char **argv)
 
 	// go ahead and check the file out (co -l filename
 	{
-		char *params[4];
+		char *params[3];
 		params[0] = CHECK_OUT;
 		params[1] = argv[1];
 		params[2] = "\"";
@@ -215,6 +215,7 @@ void do_filecheck(char *filename)
 		if (!rcsdir_exists)
 			mkdir(FULLRCSPATH, S_IRWXU | S_IRWXG | S_IRWXO);
 #endif
+		delete[] FULLRCSPATH;
 		// check file in first time
 		char *params[3];
 		params[0] = CHECK_IN;
@@ -231,6 +232,7 @@ void do_filecheck(char *filename)
 		if (!rcsdir_exists)
 			mkdir(FULLRCSPATH, S_IRWXU | S_IRWXG | S_IRWXO);
 #endif
+		delete[] FULLRCSPATH;
 		// check file in first time
 		char *params[3];
 		params[0] = CHECK_IN;
