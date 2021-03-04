@@ -1,6 +1,8 @@
-// rvi - Revision Control System Interface <mtsegaye-fm@rucus.ru.ac.za>
+// rvi - Revision Control System Interface; editor wrapper
+// v1.0.0 - v1.0.2 by Melekam Mtsegaye <mtsegaye-fm@rucus.ru.ac.za>
+// v1.1.0 - v1.1.1 by Jeffrey H. Johnson <trnsz@pobox.com>
 
-#define RVI_VERSION "1.1.0 (2021-03-04)"
+#define RVI_VERSION "v1.1.1 (2021-03-04)"
 
 #include <ctype.h>
 #include <errno.h>
@@ -37,15 +39,11 @@
 #define CHECK_OUT_R "/usr/bin/co -q \"\0"
 #define CHECK_IN "/usr/bin/ci -u -q \"\0"
 
-#define EDITOR "/usr/bin/vi\0" // guy :)
-
 #define REEDIT 2
 #define ABORT 4
 #define DG_YES 6
 #define DG_NO 8
 #define DG_OTHER 0
-
-//#define DEBUG
 
 // protos
 void handle_error(int);
@@ -56,7 +54,7 @@ int dialog();
 
 int main(int argc, char **argv)
 {
-	fprintf(stdout, "%s: Revision Control System Interface v%s\n", argv[0],
+	fprintf(stdout, "%s: Revision Control System Interface %s\n", argv[0],
 		RVI_VERSION);
 	if (argc < 2 || argc > 3) {
 		fprintf(stdout, "Usage: %s <filename>\n", argv[0]);
@@ -183,9 +181,15 @@ void do_filecheck(char *filename)
 			// concat RCSDIR + filename + RCSEXT
 			memset(filecheck, -1, sizeof(struct stat));
 			char *fname = exec_cmd(param, 3, 1);
-			stat(fname, filecheck);
-			if (S_ISREG(filecheck->st_mode))
-				rcsfile_exists = 1;
+			char *qfnme = strstr(fname, "\"");
+			if (!qfnme) {
+				stat(fname, filecheck);
+				if (S_ISREG(filecheck->st_mode))
+					rcsfile_exists = 1;
+			} else {
+				fprintf(stderr, "Error: Filename may not contain double quotes.\n");
+				exit(1);
+			}
 		}
 	}
 
