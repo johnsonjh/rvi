@@ -1,0 +1,7 @@
+configure linguist-vendored
+install-sh linguist-vendored
+missing linguist-vendored
+mkinstalldirs linguist-vendored
+LICENSE linguist-vendored
+INSTALL linguist-vendored
+README linguist-vendored
