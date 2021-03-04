@@ -270,10 +270,10 @@ char * exec_cmd(char ** params,int len,int flag)
 void handle_error(int err)
 { switch(err)
    {  case 127 : 
-          printf("Error : execve call for /bin/sh failed\n"); 
+          printf("Error: execve call failed\n"); 
           exit(1);
       case -1  : 
-          printf("Error %s\n",sys_errlist[errno]);
+          printf("Error: %s\n",strerror(errno));
           exit(1);
       default  : break;
    } 

@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env sh
 
 # Guess values for system-dependent variables and create Makefiles.
 # Generated automatically using autoconf version 2.13 
@@ -10,7 +10,6 @@
 # Defaults:
 ac_help=
 ac_default_prefix=/usr/local
-# Any additions from configure.in:
 
 # Initialize some variables set by options.
 # The variables have the same names as the options, with
@@ -159,7 +158,7 @@ Directory and file names:
   --localstatedir=DIR     modifiable single-machine data in DIR [PREFIX/var]
   --libdir=DIR            object code libraries in DIR [EPREFIX/lib]
   --includedir=DIR        C header files in DIR [PREFIX/include]
-  --oldincludedir=DIR     C header files for non-gcc in DIR [/usr/include]
+  --oldincludedir=DIR     C header files for non-g++ in DIR [/usr/include]
   --infodir=DIR           info documentation in DIR [PREFIX/info]
   --mandir=DIR            man documentation in DIR [PREFIX/man]
   --srcdir=DIR            find the sources in DIR [configure dir or ..]
@@ -499,6 +498,7 @@ else
   > $cache_file
 fi
 
+CFLAGS="-Wno-write-strings"
 ac_ext=c
 # CFLAGS is not in ac_cpp because -g, -O, etc. are not valid cpp options.
 ac_cpp='$CPP $CPPFLAGS'
@@ -522,8 +522,8 @@ fi
 
 
 
-# Extract the first word of "gcc", so it can be a program name with args.
-set dummy gcc; ac_word=$2
+# Extract the first word of "g++", so it can be a program name with args.
+set dummy g++; ac_word=$2
 echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
 echo "configure:529: checking for $ac_word" >&5
 if eval "test \"`echo '$''{'ac_cv_prog_CC'+set}'`\" = set"; then
@@ -537,7 +537,7 @@ else
   for ac_dir in $ac_dummy; do
     test -z "$ac_dir" && ac_dir=.
     if test -f $ac_dir/$ac_word; then
-      ac_cv_prog_CC="gcc"
+      ac_cv_prog_CC="g++"
       break
     fi
   done
@@ -572,7 +572,7 @@ else
         ac_prog_rejected=yes
 	continue
       fi
-      ac_cv_prog_CC="cc"
+      ac_cv_prog_CC="c++"
       break
     fi
   done
@@ -634,11 +634,11 @@ fi
  ;;
     esac
   fi
-  test -z "$CC" && { echo "configure: error: no acceptable cc found in \$PATH" 1>&2; exit 1; }
+  test -z "$CC" && { echo "configure: error: no acceptable c++ found in \$PATH" 1>&2; exit 1; }
 fi
 
-echo $ac_n "checking whether the C compiler ($CC $CFLAGS $LDFLAGS) works""... $ac_c" 1>&6
-echo "configure:642: checking whether the C compiler ($CC $CFLAGS $LDFLAGS) works" >&5
+echo $ac_n "checking whether the C++ compiler ($CC $CFLAGS $LDFLAGS) works""... $ac_c" 1>&6
+echo "configure:642: checking whether the C++ compiler ($CC $CFLAGS $LDFLAGS) works" >&5
 
 ac_ext=c
 # CFLAGS is not in ac_cpp because -g, -O, etc. are not valid cpp options.
@@ -677,16 +677,16 @@ cross_compiling=$ac_cv_prog_cc_cross
 
 echo "$ac_t""$ac_cv_prog_cc_works" 1>&6
 if test $ac_cv_prog_cc_works = no; then
-  { echo "configure: error: installation or configuration problem: C compiler cannot create executables." 1>&2; exit 1; }
+  { echo "configure: error: installation or configuration problem: C++ compiler cannot create executables." 1>&2; exit 1; }
 fi
-echo $ac_n "checking whether the C compiler ($CC $CFLAGS $LDFLAGS) is a cross-compiler""... $ac_c" 1>&6
-echo "configure:684: checking whether the C compiler ($CC $CFLAGS $LDFLAGS) is a cross-compiler" >&5
+echo $ac_n "checking whether the C++ compiler ($CC $CFLAGS $LDFLAGS) is a cross-compiler""... $ac_c" 1>&6
+echo "configure:684: checking whether the C++ compiler ($CC $CFLAGS $LDFLAGS) is a cross-compiler" >&5
 echo "$ac_t""$ac_cv_prog_cc_cross" 1>&6
 cross_compiling=$ac_cv_prog_cc_cross
 
 echo $ac_n "checking whether we are using GNU C""... $ac_c" 1>&6
 echo "configure:689: checking whether we are using GNU C" >&5
-if eval "test \"`echo '$''{'ac_cv_prog_gcc'+set}'`\" = set"; then
+if eval "test \"`echo '$''{'ac_cv_prog_g++'+set}'`\" = set"; then
   echo $ac_n "(cached) $ac_c" 1>&6
 else
   cat > conftest.c <<EOF
@@ -701,9 +701,9 @@ else
 fi
 fi
 
-echo "$ac_t""$ac_cv_prog_gcc" 1>&6
+echo "$ac_t""$ac_cv_prog_g++" 1>&6
 
-if test $ac_cv_prog_gcc = yes; then
+if test $ac_cv_prog_g++ = yes; then
   GCC=yes
 else
   GCC=
@@ -732,13 +732,13 @@ if test "$ac_test_CFLAGS" = set; then
   CFLAGS="$ac_save_CFLAGS"
 elif test $ac_cv_prog_cc_g = yes; then
   if test "$GCC" = yes; then
-    CFLAGS="-g -O2"
+    CFLAGS="-g -O"
   else
     CFLAGS="-g"
   fi
 else
   if test "$GCC" = yes; then
-    CFLAGS="-O2"
+    CFLAGS="-O"
   else
     CFLAGS=
   fi
@@ -1068,8 +1068,8 @@ else
 /* System header to define __stub macros and hopefully few prototypes,
     which can conflict with char $ac_func(); below.  */
 #include <assert.h>
-/* Override any gcc2 internal prototype to avoid an error.  */
-/* We use char because int might match the return type of a gcc2
+/* Override any g++2 internal prototype to avoid an error.  */
+/* We use char because int might match the return type of a g++2
     builtin and then its argument prototype would still apply.  */
 char $ac_func();
 
