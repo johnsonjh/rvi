@@ -1,0 +1,46 @@
+
+#
+# Rvi - Revision control system is FREEWARE !
+#
+
+SHELL = /bin/sh
+top_srcdir = @top_srcdir@
+srcdir = @srcdir@
+VPATH = @srcdir@
+
+.SUFFIXES:
+.SUFFIXES: .cc .o
+
+CC = @CC@
+CFLAGS = -I. @CFLAGS@
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+INSTALL = @INSTALL@
+prefix = @prefix@
+bindir = $(prefix)/bin
+docdir = $(prefix)/src/rvi
+
+SOURCES=src/rvi.cc
+DOCS=doc/rvi.txt
+MISC=configure mkinstalldirs install-sh aclocal.m4
+
+all: rvi
+
+install: all
+	$(top_srcdir)/mkinstalldirs $(bindir)
+	$(top_srcdir)/mkinstalldirs $(docdir)
+	$(INSTALL) rvi $(bindir)/rvi
+	$(INSTALL) $(DOCS) $(docdir)
+
+uninstall:
+	/bin/rm -f $(bindir)/rvi
+	/bin/rm -rf $(docdir)
+
+rvi	:
+	$(CC) $(CFLAGS) -o rvi $(SOURCES) $(LIBS)
+
+clean: 
+	/bin/rm -f core *.o rvi
+ 
+distclean: clean
+	/bin/rm -f config.h config.status config.cache config.log Makefile configure.in config.h.in 

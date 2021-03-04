@@ -1,0 +1,39 @@
+
+INSTALL INSTRUCTIONS
+
+
+To install do:
+
+./configure
+make
+make install
+
+
+To install to a custom dir do:
+
+./configure --prefix=<custom_dir>
+make
+make install
+
+
+To uninstall do:
+
+make uninstall
+
+
+To do a clean re-install install do:
+
+make distclean
+./configure
+make
+make install
+
+
+***
+NB: the rcs programme is required to run rvi or you'll get errors when
+    executing rvi
+    Take note of where this programme gets installed, usually /usr/local/bin/rvi
+    I have noticed another rvi(a vi editor wrapper) in linux in /bin/rvi
+    make sure you execute /usr/local/bin/rvi  
+***
+

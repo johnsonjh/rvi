@@ -1,0 +1,42 @@
+Rvi - Revision control system interface
+
+Rvi is an interface to RCS. It attempts to make the process of using RCS
+simpler. Here is an extract from the rcs man page.
+
+     " The Revision Control System (RCS) manages multiple revisions of
+     files. RCS automates the storing, retrieval, logging, identification,
+     and merging of revisions. RCS is useful for text that is revised
+     frequently, for example programs, documentation, graphics, papers, and
+     form letters. "
+
+See rcsintro(1) from more details.
+
+Requirments
+
+   * the rcs system
+   * a C compiler, if you need to compile the source. 
+   * You may need to correct the paths to the rcs programs (found in rvi.cc)
+     and recompile if your rcs programs aren't in their standard locations. 
+
+Filelist
+
+   * rvi.txt (this file)
+   * rvi.cc
+   * autoconf files
+
+Usage
+
+   * rvi < filename> [editor]
+     where
+     + filename is the file you want RCS to handle
+     + [editor] is an optional editor
+
+Download
+
+   * rvi.tar.gz
+   * ftp://rucus.ru.ac.za/pub/users/mtsegaye/rvi.tar.gz
+
+This program is freeware. Use/modify as you wish.
+
+<mtsegaye-fm@rucus.ru.ac.za>
+15/10/2000
