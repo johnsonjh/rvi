@@ -1,39 +1,41 @@
+INSTALLATION INSTRUCTIONS
+-------------------------
 
-INSTALL INSTRUCTIONS
+----
 
-
-To install do:
+To install, do:
 
 ./configure
 make
 make install
 
+----
 
-To install to a custom dir do:
+To install to a custom directory, do:
 
 ./configure --prefix=<custom_dir>
 make
 make install
 
+----
 
-To uninstall do:
+To uninstall, do:
 
 make uninstall
 
+----
 
-To do a clean re-install install do:
+For a clean re-installation, do:
 
 make distclean
 ./configure
 make
 make install
 
+----
 
-***
-NB: the rcs programme is required to run rvi or you'll get errors when
-    executing rvi
-    Take note of where this programme gets installed, usually /usr/local/bin/rvi
-    I have noticed another rvi(a vi editor wrapper) in linux in /bin/rvi
-    make sure you execute /usr/local/bin/rvi  
-***
+NOTES: * The RCS software is required; you'll get errors if it is missing.
+       * If RCS is installed to a non-standard locaton, modify rvi.cc.
+	   * Restricted vi is also known as rvi, adjust PATH or aliases as needed.
 
+----
