@@ -1,9 +1,6 @@
-
-#
 # Rvi - Revision control system is FREEWARE !
-#
 
-SHELL = /bin/sh
+SHELL = /usr/bin/env sh
 top_srcdir = @top_srcdir@
 srcdir = @srcdir@
 VPATH = @srcdir@
