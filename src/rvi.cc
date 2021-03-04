@@ -1,8 +1,8 @@
 // rvi - Revision Control System Interface; editor wrapper
 // v1.0.0 - v1.0.2 by Melekam Mtsegaye <mtsegaye-fm@rucus.ru.ac.za>
-// v1.1.0 - v1.1.1 by Jeffrey H. Johnson <trnsz@pobox.com>
+// v1.1.0 - v1.1.2 by Jeffrey H. Johnson <trnsz@pobox.com>
 
-#define RVI_VERSION "v1.1.1 (2021-03-04)"
+#define RVI_VERSION "v1.1.2 (2021-03-04)"
 
 #include <ctype.h>
 #include <errno.h>
