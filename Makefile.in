@@ -10,7 +10,7 @@ VPATH = @srcdir@
 
 CC = @CC@
 CFLAGS = -I. @CFLAGS@
-LDFLAGS = @LDFLAGS@
+vDFLAGS = @LDFLAGS@
 LIBS = @LIBS@
 INSTALL = @INSTALL@
 prefix = @prefix@
@@ -18,7 +18,7 @@ bindir = $(prefix)/bin
 docdir = $(prefix)/share/rvi
 
 SOURCES=src/rvi.cc
-DOCS=doc/rvi.txt
+DOCS=README
 MISC=configure mkinstalldirs install-sh aclocal.m4
 
 all: rvi
@@ -27,7 +27,7 @@ install: all
 	$(top_srcdir)/mkinstalldirs $(bindir)
 	$(top_srcdir)/mkinstalldirs $(docdir)
 	$(INSTALL) rvi $(bindir)/rvi
-	$(INSTALL) $(DOCS) $(docdir)
+	$(INSTALL) -m 0644 $(DOCS) $(docdir)/rvi.txt
 
 uninstall:
 	/bin/rm -f $(bindir)/rvi
