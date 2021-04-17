@@ -5,3 +5,4 @@ mkinstalldirs linguist-vendored
 LICENSE linguist-vendored
 INSTALL linguist-vendored
 README linguist-vendored
+Makefile linguist-vendored
