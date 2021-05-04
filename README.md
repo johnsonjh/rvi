@@ -1,12 +1,12 @@
 # rvi - Revision Control System Interface
 
-`rvi` is an interface to `RCS`.
+`rvi` is an interface to `RCS`
 
-## Introduction
+## Overview
 
-It attempts to make the process of using `RCS` simple.
+`rvi` attempts to make the process of using `RCS` simple
 
-## About RCS
+## Details
 
 Here is an extract from the `rcs` man page:
 
@@ -19,7 +19,7 @@ Here is an extract from the `rcs` man page:
 
 See the `rcsintro` man page for more details.
 
-## Availability:
+## Availability
 
 - [GitHub](https://github.com/johnsonjh/rvi)
 - [GitLab](https://gitlab.com/johnsonjh/rvi)
