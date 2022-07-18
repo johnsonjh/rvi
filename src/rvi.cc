@@ -35,10 +35,10 @@
 #define RCSDIR "RCS/\0"
 #define RCSEXT ",v\0"
 
-#define      UNLOCK "/usr/bin/rcs -u -q \"\0"
-#define   CHECK_OUT  "/usr/bin/co -l -q \"\0"
-#define CHECK_OUT_R     "/usr/bin/co -q \"\0"
-#define    CHECK_IN  "/usr/bin/ci -u -q \"\0"
+#define      UNLOCK "/usr/bin/env rcs -u -q \"\0"
+#define   CHECK_OUT  "/usr/bin/env co -l -q \"\0"
+#define CHECK_OUT_R     "/usr/bin/env co -q \"\0"
+#define    CHECK_IN  "/usr/bin/env ci -u -q \"\0"
 
 #define   REEDIT 2
 #define    ABORT 4
