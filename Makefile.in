@@ -18,7 +18,7 @@ bindir = $(prefix)/bin
 docdir = $(prefix)/share/rvi
 
 SOURCES=src/rvi.cc
-DOCS=README
+DOCS=README.md
 MISC=configure mkinstalldirs install-sh aclocal.m4
 
 all: rvi
