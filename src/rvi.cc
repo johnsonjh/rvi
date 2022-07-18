@@ -1,9 +1,9 @@
 /* rvi - Revision Control System Interface; editor wrapper */
 
 /* v1.0.0 - v1.0.2 by Melekam Mtsegaye <mtsegaye-fm@rucus.ru.ac.za> */
-/* v1.1.0 - v1.1.3 by Jeffrey H. Johnson <trnsz@pobox.com> */
+/* v1.1.0 - v1.1.4 by Jeffrey H. Johnson <trnsz@pobox.com> */
 
-#define RVI_VERSION "v1.1.3 (2021-05-03)"
+#define RVI_VERSION "v1.1.4 (2022-07-18)"
 
 #include    <ctype.h>
 #include    <errno.h>
@@ -15,35 +15,35 @@
 #include   <unistd.h>
 
 #ifdef linux
-#include <linux/binfmts.h>
-#include  <linux/limits.h>
-#define D_ARG_MAX MAX_ARG_STRLEN
+# include <linux/binfmts.h>
+# include  <linux/limits.h>
+# define D_ARG_MAX MAX_ARG_STRLEN
 #else  /* ifdef linux */
-#define D_ARG_MAX sysconf(_SC_ARG_MAX)
+# define D_ARG_MAX sysconf(_SC_ARG_MAX)
 #endif /* linux */
 
 #ifndef D_ARG_MAX
-#define D_ARG_MAX 255
+# define D_ARG_MAX 255
 #endif /* !D_ARG_MAX */
 
 #ifdef linux
-#ifndef PAGE_SIZE
-#define PAGE_SIZE sysconf(_SC_PAGESIZE)
-#endif /* !PAGE_SIZE */
+# ifndef PAGE_SIZE
+#  define PAGE_SIZE sysconf(_SC_PAGESIZE)
+# endif /* !PAGE_SIZE */
 #endif /* linux */
 
 #define RCSDIR "RCS/\0"
 #define RCSEXT ",v\0"
 
-#define      UNLOCK "/usr/bin/env rcs -u -q \"\0"
-#define   CHECK_OUT  "/usr/bin/env co -l -q \"\0"
-#define CHECK_OUT_R     "/usr/bin/env co -q \"\0"
-#define    CHECK_IN  "/usr/bin/env ci -u -q \"\0"
+#define UNLOCK      "/usr/bin/env rcs -u -q \"\0"
+#define CHECK_OUT   "/usr/bin/env co -l -q \"\0"
+#define CHECK_OUT_R "/usr/bin/env co -q \"\0"
+#define CHECK_IN    "/usr/bin/env ci -u -q \"\0"
 
-#define   REEDIT 2
-#define    ABORT 4
-#define   DG_YES 6
-#define    DG_NO 8
+#define REEDIT 2
+#define ABORT 4
+#define DG_YES 6
+#define DG_NO 8
 #define DG_OTHER 0
 
 void handle_error(int);
