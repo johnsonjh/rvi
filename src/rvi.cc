@@ -1,5 +1,7 @@
 /* rvi - Revision Control System Interface; editor wrapper */
 
+/* SPDX-License-Identifier: CC-PDDC */
+
 /* v1.0.0 - v1.0.2 by Melekam Mtsegaye <mtsegaye-fm@rucus.ru.ac.za> */
 /* v1.1.0 - v1.1.4 by Jeffrey H. Johnson <trnsz@pobox.com> */
 
