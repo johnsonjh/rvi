@@ -4,7 +4,7 @@
 
 ## Overview
 
-`rvi` attempts to make the process of using `RCS` simple
+`rvi` attempts to make the process of using `RCS` simple.
 
 ## Details
 
