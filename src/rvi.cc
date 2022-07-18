@@ -92,7 +92,7 @@ char **argv
     fprintf(stderr, "Error: EDITOR variable undefined\n");
     exit(1);
   }
-  
+
   {
     char *params[3];
     params[0] = CHECK_OUT;
